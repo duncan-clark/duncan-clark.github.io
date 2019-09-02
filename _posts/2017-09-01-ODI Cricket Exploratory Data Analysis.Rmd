@@ -1,0 +1,321 @@
+---
+layout: post
+title: "ODI Cricket Exploratory Data Analysis"
+author: "Duncan Clark"
+date: "September 13, 2017"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(include = TRUE)
+library(ggplot2)
+library(ggduncan)
+```
+<br>
+This is my first toy project using R and basic statistical analysis to look into something in which I am interested; Cricket. I downloaded the data from [here]( :https://cricsheet.org/downloads/) using the men's ODI data set. A little cricket background might also be helpful to the reader, though shouldn't be necessary, to understand the gist. The long and short of it is each team tries to score as many runs as they can  before the other team "gets them out". This involves one team batting and the other bowling in turn for a certain number of balls.
+
+The impetus to start this analysis was a discussion on Test Match Special (TMS) as to what was the "best" number of wickets to lose in an One Day International Cricket match (ODI), that is the number of batsmen that have been "gotten out". Anecdotally the team suggested around 5 or 6 wickets, with Andrew Sampson the resident stats man confirming the that the optimum was around 5.5 though no information was given as to how this number was obtained (its also unclear how a team can lose half a wicket, but that's a different matter). I thought it would be fun to see if I could come up with some meaningful reason why.
+
+To start with I considered both 1st and 2nd innings totals so as to increase sample size, however, they cannot be analysed in the same way since second innings are not played to completion in the event of a successful run chase. I therefore restricted my analysis to first innings scores; where the only objective of the teams is to score as many runs as possible in the allotted 50 overs or 10 wickets. I also restricted to games where there was a result, with no balls lost due to rain delays.
+
+```{r,echo = FALSE}
+load("C:/Users/Duncan/Documents/Academics/R/R_Projects/Cricket_ODIs/src/processed_data.RData")
+library(ggplot2)
+
+```
+
+To look at this quickly we used the standard ANOVA framework to verify that there is a significant difference between treatments i.e. number of wickets. First I take a quick look at the sample means just to check that we're on the right track.
+
+```{r,echo = FALSE}
+
+x_1 <- data.frame(matrix(rep(0,nrow(ODI_summary)*11), ncol = 11))
+colnames(x_1) <- seq(0,10,1)
+
+x_2 <- data.frame(matrix(rep(0,nrow(ODI_summary)*11), ncol = 11))
+colnames(x_2) <- seq(0,10,1)
+
+for(k in 1:11){
+for(j in 1:nrow(ODI_summary)){
+x_1[j,k] <- ODI_summary$Runs_1[ODI_summary$Wickets_1 == k-1][j]
+
+x_2[j,k] <- ODI_summary$Runs_2[ODI_summary$Wickets_2 == k-1][j]
+}
+}
+
+
+mu_1 <- rep(0,11)
+n_1 <- rep(0,11)
+sigma_1 <- rep(0,11)
+
+mu_2 <- rep(0,11)
+n_2 <- rep(0,11)
+sigma_2 <- rep(0,11)
+
+for(i in 1:11){
+  mu_1[i] <- mean(na.omit(x_1[,i]))
+  mu_2[i] <- mean(na.omit(x_2[,i]))
+if (is.nan(mu_1[i])){mu_1[i] <-0}
+  if (is.nan(mu_2[i])){mu_2[i] <-0} 
+  }
+
+
+for(j in 1:11)
+  {
+
+  n_1[j] <- length(na.omit(x_1[,j]))
+  n_2[j] <- length(na.omit(x_2[,j]))
+
+  
+if( n_1[j] == 0){
+  sigma_1[j] <- 1 }
+  
+  else{
+  
+  ## Could just use sd() function here #
+  sigma_1[j] <- (1/(n_1[j]-1))*sum(
+    (na.omit(x_1[,j])-rep(mu_1[j],n_1[j]))**2)
+  }
+
+  if( n_2[j] ==0){
+    sigma_2[j] <- 1}
+  
+  else{
+    
+    
+    sigma_2[j] <- (1/(n_2[j]-1))*sum(
+      (na.omit(x_2[,j])-rep(mu_2[j],n_2[j]))**2)
+  }
+}
+
+plot(seq(0,10,1),mu_1,xlab = "Wickets Taken",ylab = "Sample Mean",
+     main = "Plot of Sample means vs wickets taken in 1st innings of ODIs",col = "darkorange",pch = 16)
+
+plot(seq(0,10,1),mu_2,xlab = "Wickets Taken",ylab = "Sample Mean",
+     main = "Plot of Sample means vs wickets taken in 2nd innings of ODIs",col = "darkorange",pch = 16)
+
+plot(seq(0,10,1),sigma_1**0.5, xlab = "Wickets Taken",ylab = "Sample Standard Deviation",
+     main = "Plot of sample standard deviations vs wickets taken in 
+                  1st innings of ODIs",col = "darkorange",pch = 16)
+plot(seq(0,10,1),sigma_2**0.5, xlab = "Wickets Taken",ylab = "Sample Standard Deviation",
+     main = "Plot of sample standard deviations vs wickets taken in 
+     2nd innings of ODIs",col = "darkorange",pch = 16)
+
+
+
+```
+
+Above the first and second innings graphs are included, in the hope of justifying the exclusion of the second innings scores. The second innings sample means seem to follow a different shape, along with strange hump in the sample standard deviations. This lends weight to the argument to exclude, in addition to the experimental design suggesting that the first innings and second innings scores are fundamentally different.
+
+Using the central limit theorem the below plot gives a confidence interval of the means. Again this suggests that there is an effect attributable to the number of wickets taken. If we discount losing 0,1 or 2 wickets - since the variance of scores is very high and the sample size low, it seems that 3 is the number of wickets lost that is associated with the highest scores, this is a little different to the 5.5 wickets suggested by the TMS team.
+
+I would suggest that the the games where only 3 or 4 wickets are lost  only make up <5% of all matches, and thus may be games where the pitch is particularly easy to bat on or the bowling team poor. Thus it might be justified that 5 or 6 wickets is a "better" number to lose in most situations.
+
+```{r, echo = FALSE}
+
+alpha_mean <- 0.05
+
+ci_1_mean <- matrix(NA,nrow <- 11,ncol <-2)
+ci_2_mean <- matrix(NA,nrow <- 11,ncol <-2)
+
+
+for(j in 1:11){
+  if(n_1[j] == 0){
+    ci_1_mean[j,1] <- 0
+    ci_1_mean[j,2] <- 0
+  }
+  else{
+    ci_1_mean[j,2] <- mu_1[j] - qt(alpha_mean/2,n_1[j]-1) * ((sigma_1[j]/n_1[j])**0.5)
+                         
+ci_1_mean[j,1] <- mu_1[j] - qt(1-alpha_mean/2,n_1[j]-1) * ((sigma_2[j]/n_1[j])**0.5)
+}
+}
+
+for(j in 1:11){
+  if(n_1[j] == 0){
+    ci_2_mean[j,1] <- 0
+    ci_2_mean[j,2] <- 0
+  }
+  else{
+    ci_2_mean[j,2] <- mu_2[j] - qt(alpha_mean/2,n_2[j]-1) * ((sigma_2[j]/n_2[j])**0.5)
+    
+    ci_2_mean[j,1] <- mu_2[j] - qt(1-alpha_mean/2,n_2[j]-1) * ((sigma_2[j]/n_2[j])**0.5)
+  }
+}
+
+####Plot using base graphics###
+
+#plot(jitter(ODI_summary$Wickets_1,0.5),ODI_summary$Runs_1,cex= 0.001,col = #"darkorange",main = 
+ #      paste("Plot of ODI Runs against wickets lost with",100 - alpha_mean*100,"%
+#             confidence interval of mean"),
+ #               xlab= "Wickets lost",ylab = "Runs Scored")
+#points(seq(0,10,1),mu_1,col = "deepskyblue",pch =16)
+#segments(x0 = seq(0,10,1), x1=seq(0,10,1),y0 = ci_1_mean[,1],y1 <- #ci_1_mean[,2],col="deepskyblue",lwd= 2)
+
+
+###Plot using ggplot###
+
+ci_1_mean <- as.data.frame(cbind(seq(0,10),mu_1,ci_1_mean))
+colnames(ci_1_mean) <- c("Wickets_1","Runs_1","CI_Min","CI_Max")
+
+tmp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,],
+aes(x = Wickets_1, group = Wickets_1, y =Runs_1))+
+  theme(panel.background = element_rect(fill="gray80"))+
+  geom_jitter(colour = "darkorange",width=0.1,size=0.1)+
+  geom_errorbar(aes(ymin=CI_Min,ymax = CI_Max),data = ci_1_mean,
+                size = 1.0,
+                width = 0.1,
+                colour = "deepskyblue")+
+  xlab("Wickets taken in first innings of ODIs")+
+  ylab("Runs scored in first innings ODIs")+
+  ggtitle("Plot of runs scored against wickets taken in ODI Cricket matches,\nwith 95% confidence intervals for the mean for each wicket overlayed")+
+  scale_x_continuous(breaks =seq(0,10))
+
+print(tmp)
+
+
+
+```
+
+It seems clear that there is a treatment effect as expected, but it is important to test for this. With the hope of using standard normal theory in the ANOVA framework, I investigated whether for each wicket taken the runs scored follows a normal distribution. I checked the probability plots for each, which were mostly linear suggesting that the standard framework can be used.
+
+Proceeding with standard ANOVA method we can conclude that there is indeed an effect as expected. 
+
+```{r}
+#1. Use R built in ANOVA functions to give us our analysis.
+
+ODI_summary$Wickets_1 <- as.factor(as.numeric(ODI_summary$Wickets_1))
+
+
+runs.m1 <- lm(Runs_1 ~ Wickets_1, data = ODI_summary)
+
+AOV <- aov(Runs_1 ~ Wickets_1, data = ODI_summary)
+
+summary(AOV)
+
+```
+
+I also investigated this without assuming normality of the standard errors for each wicket treatment using the Boneferroni test, since we can't use a simple t test since we need to avoid multiple comparisons. This also yielded a highly significant result for the wicket effect.
+
+Since this wasn't all that surprising I thought about possible summary statistics that could be predictive of high first innings scores. Below I plot some graphs as an initial exploratory analysis as to what may be associated with high first innings scores, this was one of the first things I did to practice using the great ggplot2 package in R.
+
+```{r}
+
+temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+       aes(x= Wickets_1,group = Wickets_1, y = Runs_1))+
+geom_boxplot(fill = "grey80",colour = "Deep Sky Blue")+
+xlab("Wickets taken in first innning in ODis")+
+ylab("Runs scored in first innnings in ODIs")
+ 
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Ones_1,group = Ones_1, y = Runs_1))+
+     geom_boxplot(fill = "grey80",colour = "Magenta")+
+     xlab("Singles scored in first innning in ODis")+
+     ylab("Runs scored in first innnings in ODIs")
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Fours_1,group = Fours_1, y = Runs_1))+
+     geom_boxplot(fill = "grey80",colour = "Dark Orange")+
+     xlab("Fours Scored in first innning in ODis")+
+     ylab("Runs scored in first innnings in ODIs")
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Sixes_1,group = Sixes_1, y = Runs_1))+
+     geom_boxplot(fill = "grey80",colour = "Lawn Green")+
+     xlab("Sixes scored in first innning in ODis")+
+     ylab("Runs scored in first innnings in ODIs")
+   
+   print(temp)
+   
+```
+The above plots do not really say that much apart from that if more sixes and fours are scored, the score tends to by higher. Note that there are few data points for losing fewer wickets than 4, so the standard error is higher. 
+
+
+```{r}
+   
+   
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Ones_1/Runs_1, y = Runs_1))+
+     geom_point(fill = "grey80", colour ="Deep Sky Blue",size = 0.7)+
+     
+     xlab("Proportion of runs scored in first innning in ODis as singles")+
+     ylab("Runs scored in first innnings in ODIs")
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Fours_1/Runs_1, y = Runs_1))+
+     geom_point(fill = "grey80", colour ="Dark Orange",size =0.7)+
+     xlab("Proportion of runs scored in first innning in ODis as fours")+
+     ylab("Runs scored in first innnings in ODIs")+
+     geom_smooth(method='lm')
+   
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Fours_1/Runs_1, y = Runs_1))+
+     geom_point(fill = "grey80", colour ="Lawn Green",size =0.7)+
+     geom_density2d()+
+     xlab("Proportion of runs scored in first innning in ODis as fours")+
+     ylab("Runs scored in first innnings in ODIs")
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Fours_1/Runs_1, y = Runs_1))+
+     geom_point(fill = "grey80", colour ="Magenta",size =0.7)+
+     
+     xlab("Proportion of runs scored in first innning in ODis as fours")+
+     ylab("Runs scored in first innnings in ODIs")+
+     stat_bin_hex(colour = "white")+
+   scale_fill_gradient(low = "Deep Sky Blue", high = "Dark Orange")
+    
+    
+   
+   print(temp)
+   
+   temp <- ggplot(ODI_summary[is.na(ODI_summary$Wickets_1)==FALSE,], 
+                  aes(x= Sixes_1/Runs_1, y = Runs_1))+
+     geom_point(fill = "grey80", colour ="Deep Sky Blue",size = 0.7, alpha=0.5)+
+     xlab("Proportion of runs scored in first innning in ODis as sixes")+
+     ylab("Runs scored in first innnings in ODIs")+
+     geom_smooth(method='lm',colour = "Dark Orange")
+   
+   print(temp)
+   
+     temp <- ggplot(ODI_summary[ODI_summary$Team1 == "England" |
+                  ODI_summary$Team1 == "Australia" | ODI_summary$Team1 == "India" ,], 
+                  aes(x= Wickets_1, y = Runs_1,shape = Team1,colour = Team1))+
+     geom_point(fill = "grey80",size = 0.7)+
+       scale_colour_duncan()+
+     geom_smooth(method= "loess")+
+     ylim(0,500)+
+     
+     labs(title = "Wickets vs Runs for India, England and Australia in ODIs")+
+     xlab("Wickets taken in first innings in ODIs")+
+     ylab("Runs scored in first innnings in ODIs")
+     
+       
+   
+   print(temp)
+
+```
+
+From this it seems like number of sixes seem to be the most promising area to investigate, with the proportion of runs scored as fours or singles seemingly less important. It also seems that the big 3 teams generally are similar though this could be tested formally also.
+
+
+
+
+
+
+
+
+
+

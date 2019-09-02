@@ -1,0 +1,19 @@
+---
+layout: post
+title: "TTT Data Analyis"
+author: "Duncan Clark"
+date: "March 17, 2019"
+---
+<br>
+
+**Introduction**
+
+I have been collecting and analysing TTT data from UCLA cycling team collegiate TTTs. My work is very much a working progress, the first 2 examples are available [here](https://duncan-clark.github.io./assets/TTT_report_0005_DavisTTT_2018_2.html) and [here](https://duncan-clark.github.io./assets/TTT_report_0009_NationalsTTT_2018.html).
+
+The key problem in practice being the identification of the rider in the front and is actually a very interesting unsupervised learning problem, which could do with more thought.
+
+Currently the identification is done using a tuned k means clustering on the smoother power outputs for each rider. This is then constrained by allowing changes in the front rider only when the front rider slows relative to the group i.e. pulls of the front, this helps reduce the noise, though clearly this is not perfect. The number of groups, the power smoothing, and the speed differential required are all parameters that are currently selected by hand.
+
+Note the real quantity of interest is the power to drag ratio, since air resistance is the primary resistive force in most TTTs. As a proxy for drag I am using the regression formula developed in : http://adisonline.com/sportsmedicine/Abstract/2005/35040/. Considering this relative to the FTPs of the riders present gives an idea of how well the group has used its resources to go fast.
+
+Further individual analysis is possible, with the usual TSS and IF metrics available, in addition to power while on the front for each rider, to ascertain their effectiveness.

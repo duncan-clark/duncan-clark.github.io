@@ -1,0 +1,16 @@
+---
+layout: page
+title: "Strava Social Networks"
+author: "Duncan Clark"
+---
+
+My research is in stochastic social network models, I thought I would try some models out on some everyday social network data in an app that I use everyday - Strava. I thought I would look at different clubs that people on strava affiliate with and see if I could come up with a helpful analysis of the networks.
+
+This project is in its early stages, my anticipated workflow is as follows:
+* Familiarize with Strava API, or learn to web scrape the network data
+* Initial data clean and network summary measure analysis
+* Fit network models and interpret
+* Compare different networks on strava and interpret
+
+
+Any ideas, suggestions and comments welcome - please shoot me an email!
