@@ -3,7 +3,6 @@ layout: page
 title: "TTT Data Analyis"
 author: "Duncan Clark"
 date: "March 17, 2019"
-output: md_document
 ---
 <br>
 
