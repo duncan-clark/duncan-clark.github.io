@@ -3,7 +3,7 @@ layout: page
 title:  "Research"
 date:   2018-09-05 21:49:35 +0100
 categories: Page
-permalink: /Research/
+permalink: /research/
 ---
 <p>
 Many problems, and arguably some of the most interesting and least studied are inherently relational, that is observations are inextricably linked to other observations. I am currently working on a novel stochastic social network model, the so called latent order logistic model (LOLOG). We hope to understand the model's properties better, so that it may grow into a useful tool for applied researchers. I am particularly interested in explicit network generating processes, and models that allow for this in their formulation.

@@ -26,7 +26,7 @@ navbar-links:
   Research: "research"
   Toy Projects:
     - Strava Social Networks : _pages/Strava_Social_Networks
-    - TTT Data Analysis : _pages/TTT_Data_Analysis
+    - TTT Data Analysis : _pages/TTT_data_analysis
     - ODI Cricket Prediction : _pages/ODI_Cricket_App
     - Xafinity Share Save Black-Scholes : _pages/Xafinity_Share_Save_App
   Resume : "resume"
