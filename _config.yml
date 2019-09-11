@@ -30,6 +30,7 @@ navbar-links:
     - ODI Cricket Prediction : _pages/ODI_Cricket_App
     - Xafinity Share Save Black-Scholes : _pages/Xafinity_Share_Save_App
   Resume : "resume"
+  Blog: "blog"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -162,7 +163,8 @@ timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+paginate: 2
+paginate_path: "/blog/page:num/"
 
 kramdown:
   input: GFM

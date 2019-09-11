@@ -13,6 +13,16 @@ build_one = function(io) {
 rmds = list.files('.', '[.]Rmd$', recursive = TRUE, full.names = TRUE)
 files = cbind(rmds, blogdown:::with_ext(rmds, '.md'))
 
-for (i in seq_len(nrow(files))) build_one(files[i, ])
+for (i in seq_len(nrow(files))){
+  build_one(files[i, ])
+  print(files[i,])
+  tmp = readChar(files[i,1],17)
+  tmp = substr(tmp,nchar(tmp)-3,nchar(tmp))
+  print(tmp)
+  print(getwd())
+  if(tmp == "post"){
+   file.copy(paste(substr(files[i,1],1,nchar(files[i,1])-3),"md",sep=""),"_posts" ) 
+  }
 
+}
 system2('jekyll', 'build')

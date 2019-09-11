@@ -1,0 +1,38 @@
+---
+layout: page
+title: "UCLA Cycling Strava Club Network Analysis"
+author: "Duncan Clark"
+date: "September 2019"
+output: md_document
+---
+
+
+
+## Introduction
+
+My research is in stochastic social network models, I thought I would try some models out on some everyday social network data in an app that I use everyday - Strava. I thought I would look at different clubs that people on strava affiliate with and see if I could come up with a helpful analysis of the networks.
+
+Briefly as per standard network analysis I treat a network as a set of nodes some of which are connected. In this case the nodes are the Strava atheletes in a club, with node i being connected to node j if node i follows node j. The network is thus directed. The nodeset is treated as fixed for a given network, with the edges between the nodes being random, i.e. whether or not they are present is treated probablistically. 
+
+The first challenge was to gather the data, which I managed to do with the help of the excellent [Rvest]([http://rvest.tidyverse.org/]) package to scrape club data, and the [rStrava]([https://github.com/fawda123/rStrava]) package to scrape individual athelete data where available.
+
+Once the data was scraped I could carry out the usual network exploratory analysis to see what I was dealing with and hopefully point towards interesting features of the network. This also helps inform me of possible modelling strategies to understand the network more deeply.
+
+## Exploratory Analysis
+
+First I looked at the degree distribution of the network. The out degree is the number of people in a club the node is following and the in degree is the number of people in the club following that node.
+
+
+
+ 
+## Network Modelling
+
+## Network Regression
+
+## Conclusions
+
+
+
+
+
+Like always there is more to do, I'd like to expand to other networks and see if there are common statistical patterns and correposnding social processes of interest. Any ideas, suggestions and comments welcome - please shoot me an email!
