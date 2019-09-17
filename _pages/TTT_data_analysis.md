@@ -14,7 +14,7 @@ The key problem in is the identification of the rider at the front at any given 
 
 I developed an algorithm to identify the front rider, currently it uses a tuned k means clustering on the smoothed power outputs for each rider. This is then constrained by allowing changes in the front rider only when the front rider slows relative to the group i.e. pulls of the front, this helps reduce the noise, though clearly this is not perfect. The number of groups, the power smoothing, and the speed differential required are all parameters that are currently selected by hand.
 
-Once we have the rider on the front the primary quantity of interest is the power to drag ratio, since air resistance is the primary resistive force in most TTTs. As a proxy for drag I am using the regression formula developed [here](http://adisonline.com/sportsmedicine/Abstract/2005/35040/). Considering this relative to the FTPs of the riders present gives an idea of how well the group has used its resources to go fast.
+Once we have the rider on the front the primary quantity of interest is the power to drag ratio, since air resistance is the primary resistive force in most TTTs. As a proxy for drag I am using the regression formula developed [here](https://www.ncbi.nlm.nih.gov/pubmed/15831060). Considering this relative to the FTPs of the riders present gives an idea of how well the group has used its resources to go fast.
 
 Further individual analysis is possible, with the usual TSS and IF metrics available, in addition to power while on the front for each rider. This gives us an idea of how hard each rider contributed, and how hard they contributed whilst on the front. 
 

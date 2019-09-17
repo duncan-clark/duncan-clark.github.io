@@ -14,7 +14,7 @@ My research is in stochastic social network models, I thought I would try out so
 
 Briefly as per standard network analysis I treat a network as a set of nodes some of which are connected. In this case the nodes are the Strava athletes in a club, with node i being connected to node j if node i follows node j. The network is thus directed. The nodeset is treated as fixed for a given network, with the edges between the nodes being random, i.e. whether or not they are present is treated probablistically. 
 
-The first challenge was to gather the data, which I managed to do with the help of the excellent [Rvest]([http://rvest.tidyverse.org/]) package to scrape club data, and the [rStrava]([https://github.com/fawda123/rStrava]) package to scrape individual athelete data where available.
+The first challenge was to gather the data, which I managed to do with the help of the excellent [Rvest](http://rvest.tidyverse.org/) package to scrape club data, and the [rStrava](https://github.com/fawda123/rStrava) package to scrape individual athelete data where available.
 
 Once the data was scraped I could carry out the usual network exploratory analysis to see what I was dealing with and hopefully point towards interesting features of the network. This also helps inform me of possible modelling strategies to understand the network more deeply.
 
