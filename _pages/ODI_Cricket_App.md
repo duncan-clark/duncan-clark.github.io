@@ -13,15 +13,15 @@ Somewhat following on from my previous play with visualising the cricket data, I
 I excluded a little more data this time, since ODI cricket has evolved a lot in recent years, in order to help prediction of current games I only considered matches that occurred in 2010 or after.
 
 I split the data into training and testing data and tried a large array of model I used various terms, including interaction terms for each model to determine the best performing model in terms of prediction error. A non exhuastive list is a follow:
-\begin{itemize}
-\item Logistic/Probit/Cauchit Regression
-\item Logistic Lasso Regression
-\item Logistic Ridge Regression
-\item Random Forest
-\item Naive Bayes Classifier
-\item Support Vector Machine (SVM)
-\item Kernel Regularised Regression
-\item Random Forest Ensemble
-\end{itemize}
+
+* Logistic/Probit/Cauchit Regression
+* Logistic Lasso Regression
+* Logistic Ridge Regression
+* Random Forest
+* Naive Bayes Classifier
+* Support Vector Machine (SVM)
+* Kernel Regularised Regression
+* Random Forest Ensemble
+
 
 The best model in the end was ridge regularized logistic regression, on a subset of the available terms. Notably more flexible kernel regularized least squares did not improve, suggesting that the issues was not a mis-specified model, but inherently noisy data, this seems anecdotally reasonable.
