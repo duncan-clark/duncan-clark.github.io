@@ -15,7 +15,7 @@ I am also interested in spatial point process models, which are in some way anal
 
 ### Papers Under Review
 
-[**An Approach to Causal Inference over Stochastic Networks**](https://arxiv.org/)
+[**An Approach to Causal Inference over Stochastic Networks**](https://arxiv.org/abs/2106.14145)
 
 **Abstract:**  Claiming causal inferences in network settings necessitates careful consideration
 of the often complex dependency between outcomes for actors. Of particular importance are
