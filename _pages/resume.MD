@@ -6,4 +6,4 @@ categories: Page
 permalink: /resume/
 ---
 
-My professional resume is available [here]({{ duncan-clark.github.io }}/files/Resume_Duncan_Clark_Public.pdf).
+My resume is available [here]({{ duncan-clark.github.io }}/files/Resume_Duncan_Clark_Public.pdf).

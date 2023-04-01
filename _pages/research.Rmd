@@ -1,0 +1,51 @@
+---
+layout: page
+title: "Research"
+author: "Duncan Clark"
+header-includes: \usepackage{amsmath}\usepackage{amsfonts} \usepackage{amssymb}\usepackage{mathrsfs}\usepackage{amsthm}\usepackage{graphicx} \usepackage{float}\usepackage{url}\usepackage{epstopdf}\usepackage{natbib}\usepackage{bibentry}\bibliographystyle{unsrt}
+output: md_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(include = TRUE)
+```
+
+Many problems in the social sciences are inherently relational, that is observations are inextricably linked to other observations. This does not lend itself to many traditional statistical approaches and generates many ongoing, difficult and interesting problems. The majority of my work has been in developing methods for social network analysis, with a particular interest in applications for approximate causal inference in a network setting.
+
+
+### Publications
+
+```{r, echo=FALSE}
+biblio <- bibtex::read.bib("bib.bib")
+```
+
+
+
+
+`r capture.output(print(biblio["handcock2022"]))`\
+\
+`r capture.output(print(biblio["macinko2022"]))`
+
+
+### Accepted
+
+`r capture.output(print(biblio["macinko_punitive"]))`\
+\
+
+### Under Review
+
+`r capture.output(print(biblio["handcock2023"]))`\
+\
+
+
+### Working Papers
+
+`r capture.output(print(biblio["handcock_BLOLOG"]))`\
+\
+
+
+`r capture.output(print(biblio["macinko_STERGM"]))`\
+\
+
+

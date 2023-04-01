@@ -12,8 +12,10 @@ build_one = function(io) {
 # Rmd files under the root directory
 rmds = list.files('.', '[.]Rmd$', recursive = TRUE, full.names = TRUE)
 files = cbind(rmds, blogdown:::with_ext(rmds, '.md'))
+print(files)
 
 for (i in seq_len(nrow(files))){
+  print(i)
   build_one(files[i, ])
   print(files[i,])
   tmp = readChar(files[i,1],17)
