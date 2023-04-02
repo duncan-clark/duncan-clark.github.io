@@ -23,7 +23,7 @@ include: ['_pages']
 
 # List of links in the navigation bar
 navbar-links:
-  Research: "research"
+  Research: "_pages/research"
   Resume : "resume"
   Toy Projects:
     - Strava Social Networks : _pages/Strava_Social_Networks
