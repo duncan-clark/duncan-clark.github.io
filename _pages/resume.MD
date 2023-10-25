@@ -1,9 +1,9 @@
 ---
 layout: page
-title:  "Resume"
+title:  "CV"
 date:   2018-09-05 21:49:35 +0100
 categories: Page
-permalink: /resume/
+permalink: /CV/
 ---
 
-My resume is available [here]({{ duncan-clark.github.io }}/files/Resume_Duncan_Clark_Public.pdf).
+My CV is available [here]({{ duncan-clark.github.io }}/files/Duncan_Clark_CV.pdf).
