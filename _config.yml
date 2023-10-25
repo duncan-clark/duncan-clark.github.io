@@ -24,7 +24,7 @@ include: ['_pages']
 # List of links in the navigation bar
 navbar-links:
   Research: "_pages/research"
-  Resume : "_pages/CV"
+  CV : "CV"
   Toy Projects:
     - Strava Social Networks : _pages/Strava_Social_Networks
     - TTT Data Analysis : _pages/TTT_data_analysis
