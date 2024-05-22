@@ -26,17 +26,12 @@ biblio <- bibtex::read.bib("bib.bib")
 `r capture.output(print(biblio["handcock2022"]))`\
 \
 `r capture.output(print(biblio["macinko2022"]))`
-
-
-### Accepted
-
+\
 `r capture.output(print(biblio["macinko_punitive"]))`\
 \
-
-### Under Review
-
-`r capture.output(print(biblio["handcock2023"]))`\
+`r capture.output(print(biblio["macinko_STERGM"]))`\
 \
+`r capture.output(print(biblio["clark2024"]))`
 
 
 ### Working Papers
@@ -45,7 +40,6 @@ biblio <- bibtex::read.bib("bib.bib")
 \
 
 
-`r capture.output(print(biblio["macinko_STERGM"]))`\
-\
+
 
 
