@@ -94,9 +94,9 @@ yelp:
 strava:
   name: "Strava"
   baseURL: "https://www.strava.com/athletes/"
-  icon: "fa-strava"
+  icon: "fa-brands fa-strava"
 
 gooogle_scholar:
   name: "Google Scholar"
   baseURL: ""
-  icon: "fa-google-scholar"
+  icon: "fa-brands fa-google-scholar"
