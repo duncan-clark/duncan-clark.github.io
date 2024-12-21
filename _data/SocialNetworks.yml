@@ -90,3 +90,13 @@ yelp:
   name: "Yelp"
   baseURL: "https://{{ site.author.yelp }}.yelp.com"
   icon: "fa-yelp"
+
+strava:
+  name: "Strava"
+  baseURL: "https://www.strava.com/athletes/"
+  icon: "fa-strava"
+
+gooogle_scholar:
+  name: "Google Scholar"
+  baseURL: ""
+  icon: "fa-google-scholar"
