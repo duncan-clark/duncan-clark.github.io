@@ -99,4 +99,4 @@ strava:
 google_scholar:
   name: "Google Scholar"
   baseURL: ""
-  icon: "fa-google-scholar"
+  icon: "fa-graduation-cap"
