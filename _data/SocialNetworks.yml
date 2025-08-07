@@ -14,7 +14,7 @@ facebook:
 github:
   name: "GitHub"
   baseURL: "https://github.com/"
-  icon: "fa-github"
+  icon: "fab fa-github"
 
 twitter:
   name: "Twitter"
@@ -34,7 +34,7 @@ email:
 linkedin:
   name: "LinkedIn"
   baseURL: "https://linkedin.com/in/"
-  icon: "fa-linkedin"
+  icon: "fab fa-linkedin"
 
 xing:
   name: "Xing"
