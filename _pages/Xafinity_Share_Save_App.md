@@ -3,6 +3,8 @@ layout: page
 title: "Xafinity Share Save App"
 author: "Duncan Clark"
 header-includes: \usepackage{amsmath}\usepackage{amsfonts} \usepackage{amssymb}\usepackage{mathrsfs}\usepackage{amsthm}\usepackage{graphicx} \usepackage{float}\usepackage{url}\usepackage{epstopdf}
+sitemap: false
+noindex: true
 ---
 
 TLDR : I made a Black-Scholes call option pricing app [here](https://duncan-clark.shinyapps.io/xafinity_share_save_app/)

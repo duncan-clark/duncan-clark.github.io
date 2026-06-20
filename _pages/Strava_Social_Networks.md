@@ -3,6 +3,8 @@ layout: page
 title: "Strava Social Networks"
 author: "Duncan Clark"
 permalink: /Strava_Social_Networks/
+sitemap: false
+noindex: true
 ---
 
 UCLA Strava network analysis is available [here](/UCLA_net_strava/).

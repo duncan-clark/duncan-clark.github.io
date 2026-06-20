@@ -3,6 +3,8 @@ layout: page
 title: "TTT Data Analyis"
 author: "Duncan Clark"
 date: "March 17, 2019"
+sitemap: false
+noindex: true
 ---
 <br>
 

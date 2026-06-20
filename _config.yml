@@ -69,6 +69,7 @@ social-network-links:
   email: "dac6@williams.edu"
   github: duncan-clark
   google_scholar : "https://scholar.google.com/citations?user=DBB2rEAAAAAJ&hl=en"
+#  orcid: "0000-0000-0000-0000"  # register at https://orcid.org and uncomment with your ID
   strava: "duncanclark"
 #  twitter: daattali
 #  reddit: yourname
@@ -169,6 +170,20 @@ exclude:
 
 plugins:
   - jekyll-sitemap
+
+sitemap:
+  exclude:
+    - "/_pages/ODI_Cricket_Analysis/"
+    - "/_pages/ODI_Cricket_App/"
+    - "/_pages/TTT_data_analysis/"
+    - "/_pages/UCLA_net_strava/"
+    - "/_pages/Xafinity_Share_Save_App/"
+    - "/Strava_Social_Networks/"
+    - "/files/TTT_report_0005_DavisTTT_2018_2.html"
+    - "/files/TTT_report_0009_NationalsTTT_2018.html"
+    - "/files/UCLA_net_strava.html"
+    - "/files/Resume_Duncan_Clark_Public.pdf"
+    - "/img/google-scholar.html"
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

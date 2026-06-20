@@ -4,6 +4,8 @@ title: "ODI Cricket Exploratory Data Analysis"
 author: "Duncan Clark"
 date: "September 13, 2017"
 output: md_document
+sitemap: false
+noindex: true
 ---
 
 

@@ -3,6 +3,8 @@ layout: page
 title: "ODI Cricket Prediction Shiny App"
 author: "Duncan Clark"
 date: "September 1, 2018"
+sitemap: false
+noindex: true
 ---
 <br>
 

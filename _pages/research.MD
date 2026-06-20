@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Research"
-subtitle: Publications and working papers in social network analysis and causal inference.
+meta-title: "Publications | Duncan A. Clark"
+subtitle: Publications and working papers in social network analysis, social contagion, causal inference, and spatial point processes.
 permalink: /research/
 author: "Duncan Clark"
 ---

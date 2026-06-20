@@ -4,6 +4,8 @@ title: "UCLA Cycling Strava Club Network Analysis"
 author: "Duncan Clark"
 date: "September 2019"
 output: html_document
+sitemap: false
+noindex: true
 ---
 
 

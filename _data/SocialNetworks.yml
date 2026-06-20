@@ -100,3 +100,8 @@ google_scholar:
   name: "Google Scholar"
   baseURL: ""
   icon: "fa-graduation-cap"
+
+orcid:
+  name: "ORCID"
+  baseURL: "https://orcid.org/"
+  icon: "fab fa-orcid"

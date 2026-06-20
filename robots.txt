@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+Disallow: /_pages/
+Disallow: /Strava_Social_Networks/
+Disallow: /files/TTT_report_
+Disallow: /files/UCLA_net_strava.html
+Disallow: /files/Resume_Duncan_Clark_Public.pdf
+Disallow: /img/google-scholar.html
+
 Sitemap: https://duncan-clark.github.io/sitemap.xml
