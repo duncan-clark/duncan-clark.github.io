@@ -24,6 +24,7 @@ cat(format_bib_keys(biblio, c(
   "handcock2022",
   "macinko2022",
   "macinko_punitive",
+  "STERGM",
   "clark2024"
 )))
 ```
@@ -42,7 +43,6 @@ cat(format_bib_keys(biblio, c(
 
 ```{r working-papers, echo=FALSE, results='asis'}
 cat(format_bib_keys(biblio, c(
-  "macinko_STERGM",
   "handcock_BLOLOG",
   "ernm_JSS"
 )))

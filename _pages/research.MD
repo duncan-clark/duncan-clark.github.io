@@ -18,6 +18,8 @@ Clark DA, Macinko J, Porfiri M (2022). "What factors drive state firearm law ado
 
 Macinko J, Pomeranz JL, Clark DA, Porfiri M (2023). "The diffusion of punitive firearm preemption laws across US states." *American Journal of Preventive Medicine*.
 
+Clark DA, Macinko J, Porfiri M (2024). "Modeling State Firearm Law Adoption Using Temporal Network Models." *The Milbank Quarterly*, *102*(1), 97-121. [doi:10.1111/1468-0009.12677](https://doi.org/10.1111/1468-0009.12677)
+
 Clark DA, Handcock MS (2024). "Causal inference over stochastic networks." *Journal of the Royal Statistical Society Series A: Statistics in Society*, qnae001. [doi:10.1093/jrsssa/qnae001](https://doi.org/10.1093/jrsssa/qnae001)
 
 ### Preprints
@@ -29,8 +31,6 @@ Kresin CJ, Clark DA, Davis L, Hazelton M (2026). "Causal inference for spatiotem
 Clark DA (2026). "A Sensitivity Framework for Identifying Contagion under Latent Homophily for Fixed-in-Time Network Analyses, with an Application to U.S. House Congressional Voting." [arXiv:2606.18197](https://arxiv.org/abs/2606.18197)
 
 ### Working Papers
-
-Clark DA, Macinko J, Porfiri M (2022). "A framework for credible prediction of state firearm legislative activity with dynamic network models."
 
 Clark DA, Handcock MS (2022). "Bayesian Inference for Latent Order Logistic Network Models."
 
