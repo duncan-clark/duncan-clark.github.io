@@ -1,19 +1,17 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
   <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator }} {{ site.description }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <meta name="author" content="{{ site.author.name }}" />
 
-  {% if page.meta-description %}
-  <meta name="description" content="{{ page.meta-description }}">
-  {% elsif page.subtitle %}
+  {% if page.subtitle %}
   <meta name="description" content="{{ page.subtitle }}">
-  {% elsif site.description %}
-  <meta name="description" content="{{ site.description }}">
   {% endif %}
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} {{ site.title-separator }} {{ site.description }}" href="{{ '/feed.xml' | absolute_url }}" />
 
   {% include gtag.html %}
   {% include gtm_head.html %}
@@ -60,8 +58,6 @@
   <meta property="fb:app_id" content="{{ site.fb_app_id }}" />
   {% endif %}
 
-  <meta property="og:site_name" content="{{ site.title }}" />
-
   {% if page.meta-title %}
   <meta property="og:title" content="{{ page.meta-title }}" />
   {% elsif page.title %}
@@ -74,8 +70,6 @@
   <meta property="og:description" content="{{ page.meta-description }}">
   {% elsif page.subtitle %}
   <meta property="og:description" content="{{ page.subtitle }}">
-  {% elsif site.description %}
-  <meta property="og:description" content="{{ site.description }}">
   {% else %}
   <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}">
   {% endif %}
@@ -100,10 +94,8 @@
 
   <!-- Twitter summary cards -->
   <meta name="twitter:card" content="summary" />
-  {% if site.author.twitter %}
   <meta name="twitter:site" content="@{{ site.author.twitter }}" />
   <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
-  {% endif %}
 
   {% if page.meta-title %}
   <meta name="twitter:title" content="{{ page.meta-title }}" />
@@ -117,8 +109,6 @@
   <meta name="twitter:description" content="{{ page.meta-description }}">
   {% elsif page.subtitle %}
   <meta name="twitter:description" content="{{ page.subtitle }}">
-  {% elsif site.description %}
-  <meta name="twitter:description" content="{{ site.description }}">
   {% else %}
   <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}">
   {% endif %}
@@ -133,8 +123,9 @@
   {% include matomo.html %}
   {% endif %}
 
-  {% if page.include-schema %}
-  {% include schema-person.html %}
+  {% if page.comments and site.staticman.repository and site.staticman.branch %}
+  <!-- Staticman -->
+  <link rel="stylesheet" href="{{ "/css/staticman.css" | relative_url }}" />
   {% endif %}
 
 </head>

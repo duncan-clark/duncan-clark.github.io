@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Research"
+subtitle: Publications and working papers in social network analysis and causal inference.
+permalink: /research/
 author: "Duncan Clark"
 header-includes: \usepackage{amsmath}\usepackage{amsfonts} \usepackage{amssymb}\usepackage{mathrsfs}\usepackage{amsthm}\usepackage{graphicx} \usepackage{float}\usepackage{url}\usepackage{epstopdf}\usepackage{natbib}\usepackage{bibentry}\bibliographystyle{unsrt}
 output: md_document

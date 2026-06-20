@@ -1,0 +1,53 @@
+# Retired settings — merge into _config.yml to restore blog/comments
+# Archived during site audit, June 2026
+
+# --- Comments ---
+disqus: "duncan-clark-github-io"
+
+staticman:
+  repository :
+  branch     : master
+  endpoint   :
+  reCaptcha:
+    siteKey  :
+    secret   :
+
+# --- Blog pagination ---
+permalink: /:year-:month-:day-:title/
+paginate: 3
+paginate_path: "/blog/page:num/"
+
+# Post defaults (add alongside existing defaults, or merge scopes)
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: "post"
+#       comments: true
+#       social-share: true
+
+link-tags: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# --- Analytics (deprecated UA; use gtag with GA4 instead) ---
+# google_analytics: "UA-126973962-1"
+
+# --- prose.io config (obsolete editor; kept for reference) ---
+# prose:
+#   rooturl: '_posts'
+#   media: 'img'
+#   ignore:
+#     - 404.html
+#     - LICENSE
+#     - feed.xml
+#     - _config.yml
+#     - /_layouts
+#     - /_includes
+#     - /css
+#     - /img
+#     - /js

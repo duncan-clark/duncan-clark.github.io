@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duncan-clark.github.io/sitemap.xml

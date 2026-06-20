@@ -4,7 +4,6 @@ gem "github-pages", '228', group: :jekyll_plugins
 
 # enable tzinfo-data for local build
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
-gem 'jekyll-paginate'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem "webrick", "~> 1.8"

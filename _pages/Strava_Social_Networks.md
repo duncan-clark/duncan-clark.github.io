@@ -2,15 +2,13 @@
 layout: page
 title: "Strava Social Networks"
 author: "Duncan Clark"
+permalink: /Strava_Social_Networks/
 ---
 
-UCLA strava network anaysis [here](https://duncan-clark.github.io./files/UCLA_net_strava.html)
+UCLA Strava network analysis is available [here](/UCLA_net_strava/).
 
-My research is in stochastic social network models, I thought I would try some models out on some everyday social network data in an app that I use everyday - Strava. I thought I would look at different clubs that people on strava affiliate with and see if I could come up with a helpful analysis of the networks.
+My research is in stochastic social network models. I tried some models out on everyday social network data from an app I use daily — Strava. I looked at different clubs that people on Strava affiliate with and explored whether I could produce a helpful analysis of those networks.
 
-I managed to scrape the publically available data from strava and did some exploratory analysis on the UCLA cycling team network [here](https://duncan-clark.github.io./files/UCLA_net_strava.html)
+I scraped the publicly available data from Strava and did exploratory analysis on the UCLA cycling team network, [documented here](/UCLA_net_strava/).
 
-Like always there is more to do, I'd like to expand to other networks and see if there are common statistical patterns and correposnding social processes of interest. Any ideas, suggestions and comments welcome - please shoot me an email!
-
-
-
+Like always there is more to do. I'd like to expand to other networks and see if there are common statistical patterns and corresponding social processes of interest. Any ideas, suggestions, and comments welcome — please shoot me an email!

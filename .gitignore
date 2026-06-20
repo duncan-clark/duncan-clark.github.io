@@ -7,3 +7,10 @@ _site
 .DS_Store
 Thumbs.db
 ehthumbs.db
+
+# R
+cache/
+*_cache/
+.Rhistory
+.RData
+.Rproj.user
