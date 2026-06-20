@@ -4,44 +4,46 @@ title: "Research"
 subtitle: Publications and working papers in social network analysis and causal inference.
 permalink: /research/
 author: "Duncan Clark"
-header-includes: \usepackage{amsmath}\usepackage{amsfonts} \usepackage{amssymb}\usepackage{mathrsfs}\usepackage{amsthm}\usepackage{graphicx} \usepackage{float}\usepackage{url}\usepackage{epstopdf}\usepackage{natbib}\usepackage{bibentry}\bibliographystyle{unsrt}
-output: md_document
 ---
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(include = TRUE)
+old_wd <- getwd()
+setwd(dirname(knitr::current_input()))
+on.exit(setwd(old_wd), add = TRUE)
+source("../R/format_bib.R")
+biblio <- bibtex::read.bib("bib.bib")
 ```
 
 Many problems in the social sciences are inherently relational, that is observations are inextricably linked to other observations. This does not lend itself to many traditional statistical approaches and generates many ongoing, difficult and interesting problems. The majority of my work has been in developing methods for social network analysis, with a particular interest in applications for approximate causal inference in a network setting.
 
-
 ### Publications
 
-```{r, echo=FALSE}
-biblio <- bibtex::read.bib("bib.bib")
+```{r publications, echo=FALSE, results='asis'}
+cat(format_bib_keys(biblio, c(
+  "handcock2022",
+  "macinko2022",
+  "macinko_punitive",
+  "clark2024"
+)))
 ```
 
+### Preprints
 
-
-
-`r capture.output(print(biblio["handcock2022"]))`\
-\
-`r capture.output(print(biblio["macinko2022"]))`
-\
-`r capture.output(print(biblio["macinko_punitive"]))`\
-\
-`r capture.output(print(biblio["macinko_STERGM"]))`\
-\
-`r capture.output(print(biblio["clark2024"]))`
-
+```{r preprints, echo=FALSE, results='asis'}
+cat(format_bib_keys(biblio, c(
+  "clark_2025_self_exciting",
+  "kresin_causal_2026",
+  "clark_contagion_2026"
+)))
+```
 
 ### Working Papers
 
-`r capture.output(print(biblio["handcock_BLOLOG"]))`\
-\
-
-
-
-
-
+```{r working-papers, echo=FALSE, results='asis'}
+cat(format_bib_keys(biblio, c(
+  "macinko_STERGM",
+  "handcock_BLOLOG",
+  "ernm_JSS"
+)))
+```

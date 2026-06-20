@@ -21,6 +21,19 @@ source("R/build.R")
 
 This knits Rmd files to Markdown. Check that YAML front matter (title, permalink, subtitle) is preserved in the output — `research.Rmd` includes front matter that should carry through to `research.MD`.
 
+Required R packages: `bibtex`, `knitr`, `blogdown`, `xfun`, `rmarkdown`.
+
+```r
+install.packages(c("bibtex", "knitr", "blogdown", "xfun", "rmarkdown"))
+source("R/build.R")   # knits all .Rmd files and builds the site
+```
+
+To rebuild only the research page:
+
+```r
+xfun::Rscript(c("R/build_one.R", "_pages/research.Rmd", "_pages/research.MD"))
+```
+
 ## Local preview
 
 ```sh
