@@ -8,4 +8,4 @@ categories: Page
 permalink: /CV/
 ---
 
-My CV is available [here](/files/Duncan_Clark_CV.pdf).
+My CV is available [here](/files/Duncan_Clark_CV.pdf?v=20260623).
