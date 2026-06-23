@@ -34,6 +34,17 @@ To rebuild only the research page:
 xfun::Rscript(c("R/build_one.R", "_pages/research.Rmd", "_pages/research.MD"))
 ```
 
+## Updating the CV (annual)
+
+LaTeX source lives in `Duncan_Clark_CV/`. Keep `bib.bib` aligned with `_pages/bib.bib` / the research page, then:
+
+```sh
+cd Duncan_Clark_CV
+./build.sh              # archives under archive/YYYY-MM-DD/ and updates files/Duncan_Clark_CV.pdf
+```
+
+Pass an explicit date if needed: `./build.sh 2026-06-20`. Each run snapshots `CV.tex`, `bib.bib`, and the PDF into that dated folder. See `Duncan_Clark_CV/README.md` for details.
+
 ## Local preview
 
 ```sh

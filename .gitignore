@@ -14,3 +14,11 @@ cache/
 .Rhistory
 .RData
 .Rproj.user
+
+# LaTeX (CV)
+Duncan_Clark_CV/*.aux
+Duncan_Clark_CV/*.log
+Duncan_Clark_CV/*.out
+Duncan_Clark_CV/*.bbl
+Duncan_Clark_CV/*.blg
+Duncan_Clark_CV/CV.pdf

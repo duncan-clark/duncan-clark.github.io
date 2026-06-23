@@ -1,0 +1,271 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
+\bibliographystyle{unsrtnat}
+\usepackage[pdftex]{hyperref}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeItemNotBold}[2]{
+  \item\small{{#1}{: #2 \vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingCont}[2]{
+  \vspace{-1pt}
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItemNotBold}[2]{\resumeItemNotBold{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStartNoBullet}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\nobibliography{bib}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\LARGE Duncan A. Clark} & Email : \href{mailto:dac6@williams.edu}{dac6@williams.edu}\\
+  \textbf{Assistant Professor of Statistics} & \href{http://duncan-clark.github.io}{duncan-clark.github.io} \\
+   \textbf{Williams College} &  \href{https://orcid.org/0000-0001-7243-3946}{ORCID 0000-0001-7243-3946}  \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStartNoBullet
+    \resumeSubheading
+      {University of California, Los Angeles }{Los Angeles, CA}
+      {Doctor of Philosophy in Statistics  GPA: 3.89/4.00}{Sep. 2017 -- June. 2022}
+    \resumeSubheading
+      {University College London}{London, United Kingdom}
+      {Combined Bachelors and Masters (MSci) in Mathematics 1st Class Honors}{Sep. 2011 -- June. 2015}
+  \resumeSubHeadingListEnd
+
+  %-----------ACADEMIC EXPERIENCE-----------------
+\section{Academic Positions}
+  \resumeSubHeadingListStartNoBullet
+    \resumeSubheading
+      {Assistant Professor of Statistics}{July 2024 -- Present}
+      {Williams College}{}
+  \resumeSubHeadingListEnd
+
+ %-----------Publications-----------------
+\section{Publications}
+  \begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0pt]
+    \item \bibentry{handcock2022}
+    \item \bibentry{macinko2022}
+    \item \bibentry{macinko2023}
+    \item \bibentry{STERGM}
+    \item \bibentry{clark2024}
+    \end{enumerate}
+
+\section{Preprints}
+  \begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0pt]
+    \item \bibentry{clark_2025_self_exciting}
+    \item \bibentry{kresin_causal_2026}
+    \item \bibentry{clark_contagion_2026}
+    \end{enumerate}
+
+\section{Working Papers}
+  \begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0pt]
+    \item \bibentry{handcock_BLOLOG}
+    \item \bibentry{ernm_JSS}
+    \end{enumerate}
+%-------------------------------------------
+
+ %-----------Presentations And Talks -----------------
+ \section{Presentations and Talks}
+ \textbf{Invited:}
+   \resumeSubHeadingListStartNoBullet
+         \resumeSubItemNotBold
+        {The University of Auckland, Research Talk}{January 2026}
+                 \resumeSubItemNotBold
+        {CFE-CMStatistics 2025 Invited Talk}{December 2025}
+      \resumeSubItemNotBold
+        {Pennsylvania State University, Colloquium talk}{September 2025}
+     \resumeSubItemNotBold
+        {University of California Santa Cruz, Colloquium talk}{June 2025}
+        \resumeSubHeadingListEnd
+ \textbf{Contributed:}
+  \resumeSubHeadingListStartNoBullet
+     \resumeSubItemNotBold
+        {American Statistical Association (ASA) : Joint Statistical Meetings : Contributed Talk}{2025}
+    \resumeSubItemNotBold
+        {New England Statistics Symposium : Contributed Talk}{2025}
+     \resumeSubItemNotBold
+        {American Statistical Association (ASA) : Joint Statistical Meetings : Contributed Talk}{2024}
+    \resumeSubItemNotBold
+        {Summer Institute in Computational Social Sciences at UCLA - Industry Panel}{2023}
+     \resumeSubItemNotBold
+        {American Statistical Association (ASA) : Joint Statistical Meetings : Contributed Talk}{2022}
+    \resumeSubItemNotBold
+        {International Network for Social Network Analysis (INSNA) : Oral Presentation}{2022}
+  \resumeSubHeadingListEnd
+
+%-----------Teaching-----------------
+\section{Teaching}
+\resumeSubheadingCont 
+          {Williams College (2024 - Present) }{Instructor}
+  
+  \resumeSubHeadingListStartNoBullet
+      \resumeSubItem{STAT 465 Bayesian Statistics}{Fall 2025}
+      \resumeSubItem{STAT 202 Introduction to Statistical Modeling}{Fall 2025 (x1), Spring 2026 (x2)}
+    \resumeSubItem{STAT 161 Introductory Statistics for Social Science}{Fall 2024 (x2), Spring 2025 (x2)}
+    \resumeSubHeadingListEnd
+\resumeSubheadingCont
+          {University of California, Los Angeles (2018-2020)}{Teaching Assistant}
+  \resumeSubHeadingListStartNoBullet
+    \resumeSubItem{Statistics 10 Introduction to Statistics}{Summer 2019, Fall 2019, Winter 2020, Spring 2020, Fall 2020.}
+    \resumeSubItem{Statistics 12 Introduction to Statistics for Geography and Environmental Studies}{Winter 2019}
+    \resumeSubItem{Statistics 13 Introduction to Statistics for the Life Sciences,}{Fall 2018, Spring 2019,}
+\resumeSubHeadingListEnd
+
+\renewcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+%--------PROGRAMMING SKILLS------------
+\section{Grants}
+ \resumeSubHeadingListStart
+    \item Associate Investigator: Marsden Fund Fast Start 25-UOO-086, NZD 360,000
+ \resumeSubHeadingListEnd
+
+
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+ \resumeSubHeadingListStart
+    \item Python, R, SQL, C++, AWS tools
+ \resumeSubHeadingListEnd
+
+ %--------Awards------------
+\section{Awards}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{UCLA Department of Statistics:}{ Outstanding PhD Dissertation Award 2022} 
+   }
+ \resumeSubHeadingListEnd
+
+  %--------Service------------
+\section{Service}
+  \resumeSubHeadingListStartNoBullet
+  \resumeSubItemNotBold
+    {To the Discipline}{Reviewer: Journal of Complex Networks, Journal of the American Statistical Association, Annals of Applied Statistics, Biometrics}
+ \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Industry Experience}
+  \resumeSubHeadingListStartNoBullet
+      \resumeSubheading
+      {Atalan Tech}{Remote (USA)}
+      {Data Scientist and Engineer}{Jun. 2023 - May 2024}
+      \resumeItemListStart
+        \resumeItem{Machine Learning }{Applied modern Machine Learning to prediction of clinician burnout. Framed problem as a survival analysis, and greatly exceeded state of the art model performance. Developed a deep learning based latent procedure code embedding model, to make use of the most granular a data possible in the context of predicting clinician burnout.}
+        \resumeItem{Data Engineering}{Designed and implemented scalable backed systems in AWS for serving machine learning models. Put in place processes for ensuring data validity, in the face of multple large clients giving extremely heterogeneous data. Coached data science team on how to do scalable, robust and auditable machine learning.}
+        \resumeItem{Research}{Collaborated with economics research team on statistical methods. Advocated for strong data controls and processes to ensure reproducible researh. Contributed data analyses for conference proceedings.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Meta Platforms, Inc.}{New York City, NY}
+      {Research Data Scientist (Laid off when department disbanded)}{Aug. 2022 - Aug 2023}
+      \resumeItemListStart
+        \resumeItem{Differentially Private Data Storage}{Advised software engineering team on scope for differentially private aggregation with a meta analysis of SQL queries. Identified common privacy leaks, resulting in improved safeguards to maintain user privacy in the data warehouse.}
+        \resumeItem{Privacy Footprint}
+          {Assessed the impact of data minimization efforts. Worked cross functionally with privacy experts and software engineers to rapidly ramp up on the domain. Identified 100s of thousands of engineering hours saved. The impact assessment resulted in strategic investment in data minimization, reducing the cost of privacy compliance.}
+        \resumeItem{Privacy Cost Graph}
+          {Metrics development on the cost of engineering hours to ensure Meta infrastructure is privacy compliant. Proposed graph model of the flow of data in the warehouse with respect to privacy cost. Quantified the hours saved due to deidentification efforts, using causal inference techniques to estimate average treatment effects. These robust analyses drove decision makers to invest in high return areas to maximise cost savings.}
+      \resumeItem{Differentially Private Neural Network Training}{Ramped up on differentially private deep learning. Implemented a cutting edge differential privacy accountant for the open source private training module Opacus.}
+      \resumeItemListEnd
+    \resumeSubheadingCont
+          {Research Data Scientist Intern}{Jun. 2021 - Sept. 2021}
+            \resumeItemListStart
+                \resumeItem{Classification of semantic data types}{Advised data engineers on sampling methods to achieve unbiased performance estimation.
+                Understood and iterated on in house deep learning model for data type prediction.
+                Proposed simpler alternative model with dramatic training time decrease, whilst improving performance.
+}
+            \resumeItemListEnd
+    \resumeSubheadingCont
+          {Infrastructure Data Scientist Intern}{Jun. 2020 - Sept. 2020}
+            \resumeItemListStart
+                \resumeItem{App performance prediction}{Predicted production app performance regressions with beta testing data. Adapted quickly to Facebook scale, trillion line data, learned internal tools, machine learning workflows. Built, tested and iterated on predictive models using complex, noisy beta testing data. Communicated and collaborated with to software engineers achieving a false positive reduction of ~90\%.}
+            \resumeItemListEnd
+    \resumeSubheading
+          {Xafinity Consulting}{Reading, United Kingdom}
+          {Actuarial Analyst}{Sep. 2015 - Sep. 2017}
+          \resumeItemListStart
+              \resumeItem{Pension Scheme Actuarial Work}
+              {General defined benefit pension scheme liability modeling e.g. valuations, severance costs, transfer values, accounting disclosures, assumption derivation.}
+            \resumeItem{Pension Insurance}
+              {Selected for specialist pension insurance team due to strong understanding of liability models. Rapid turn around on complex data sets and bespoke scheme rules for a wide range of schemes. Communicated, advised and collaborated with pricing actuaries on multiple $>\pounds$1 billion deals.}
+            \resumeItem{Institute Training}{Part qualified IFoA actuary $60\%$ of exams passed (CT 1-8). Strong understanding of foundational finance concepts.
+            }
+          \resumeItemListEnd
+    
+      \resumeSubHeadingListEnd
+
+
+
+\end{document}

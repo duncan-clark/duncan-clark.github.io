@@ -1,0 +1,168 @@
+\documentclass[letterpaper,10pt]{article}
+
+% -------------------- Packages --------------------
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% -------------------- Page Setup --------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.45in}
+\addtolength{\textwidth}{0.90in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.10in}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% -------------------- Section Formatting --------------------
+\titleformat{\section}
+  {\vspace{-2pt}\scshape\raggedright\large}
+  {}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% -------------------- Custom Commands --------------------
+\newcommand{\resumebullet}{\raisebox{0.2ex}{\tiny$\bullet$}}
+
+\newcommand{\resumeItem}[1]{
+  \item \small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabularx}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubheadingOneLine}[2]{
+  \vspace{-1pt}\item
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} & \textbf{#2} \\
+  \end{tabularx}\vspace{-6pt}
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*, itemsep=2pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*, label={}, itemsep=3pt, topsep=2pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+
+% Tighten list bullets
+\setlist[itemize]{noitemsep, topsep=2pt}
+
+% -------------------- Document --------------------
+\begin{document}
+
+% -------------------- Header --------------------
+\begin{tabularx}{\textwidth}{X r}
+  {\LARGE \textbf{Duncan Clark}} & \href{mailto:clark.a.duncan@gmail.com}{clark.a.duncan@gmail.com} \\
+  \textbf{Portfolio Analytics / Decision Science} & (310) 254-6345 \\
+  \href{http://duncan-clark.github.io}{duncan-clark.github.io} & \\
+\end{tabularx}
+\vspace{-6pt}
+
+% -------------------- Summary --------------------
+\section{Summary}
+\small{
+Decision-focused data scientist with experience in Big Tech and healthcare analytics, specializing in causal inference, risk/impact measurement, and scalable data/ML systems. Proven track record building metrics and models that change investment decisions and engineering priorities (e.g., quantified large operational savings; delivered privacy and compliance analytics at scale). Strong foundations in finance and liability modeling from actuarial work; PhD-trained statistician with expertise in uncertainty quantification and structured dependence (networks).
+}
+\vspace{-2pt}
+
+% -------------------- Core Skills --------------------
+\section{Core Skills}
+\small{
+\textbf{Decision \& Measurement:} causal inference, A/B impact estimation, sensitivity analysis, KPI design, uncertainty quantification, scenario thinking \\
+\textbf{Modeling:} survival analysis, supervised learning, embeddings, differential privacy (DP) measurement and accounting \\
+\textbf{Data \& Systems:} Python, R, SQL, AWS, production data pipelines, model serving, data validation/auditing \\
+\textbf{Domains:} privacy analytics \& governance, healthcare/HR analytics, actuarial liability modeling, portfolio-style risk reasoning
+}
+\vspace{-4pt}
+
+% -------------------- Experience --------------------
+\section{Industry Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Meta Platforms, Inc.}{New York City, NY}
+    {Research Data Scientist}{Aug 2022 -- Aug 2023}
+    \resumeItemListStart
+      \resumeItem{\textbf{Built decision-driving measurement for privacy programs} by partnering with engineers and privacy experts to quantify the impact of data minimization and de-identification efforts across large-scale data systems.}
+      \resumeItem{\textbf{Developed privacy cost metrics} to estimate engineering effort required for privacy compliance; created frameworks to prioritize high-ROI interventions and guide strategic investment.}
+      \resumeItem{\textbf{Designed a graph-based view of data flows} to reason about privacy footprint and compliance cost; used causal methods to estimate effects and support leadership decisions.}
+      \resumeItem{\textbf{Differential privacy expertise:} advised teams on DP aggregation risks in SQL workloads; identified common leak patterns and improved safeguards.}
+      \resumeItem{\textbf{Implemented DP training components} including a differential privacy accountant for open-source private training (Opacus), enabling more rigorous privacy guarantees in model training workflows.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Meta Platforms, Inc.}{New York City, NY}
+    {Research Data Scientist Intern}{Jun 2021 -- Sept 2021}
+    \resumeItemListStart
+      \resumeItem{\textbf{Improved evaluation validity} by advising on sampling methods for unbiased performance estimation on semantic type classification tasks.}
+      \resumeItem{\textbf{Reduced training time while improving performance} by proposing a simpler alternative model to an in-house deep learning approach.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Meta Platforms, Inc.}{Remote / Menlo Park, CA}
+    {Infrastructure Data Scientist Intern}{Jun 2020 -- Sept 2020}
+    \resumeItemListStart
+      \resumeItem{\textbf{Predicted production app performance regressions} from beta testing signals; iterated on models under noisy, high-scale conditions.}
+      \resumeItem{\textbf{Reduced false positives by \raisebox{0.2ex}{\small\textasciitilde}90\%} through feature refinement and workflow improvements, improving engineer trust and actionability.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Atalan Tech}{Remote (USA)}
+    {Data Scientist \& Engineer}{Jun 2023 -- May 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{Led end-to-end modeling for clinician burnout prediction} by reframing the problem as survival analysis and improving performance versus prior baselines.}
+      \resumeItem{\textbf{Built granular procedure-code embeddings} (deep learning) to capture fine clinical signals, enabling stronger predictive performance with heterogeneous client data.}
+      \resumeItem{\textbf{Designed scalable AWS-backed systems} for serving ML models and enforcing data validity across multiple enterprise clients with heterogeneous schemas.}
+      \resumeItem{\textbf{Established auditable ML and data controls} (validation, monitoring, reproducibility practices) and coached the data science team on robust delivery.}
+      \resumeItem{\textbf{Partnered with economics researchers} on statistical methods and analyses contributing to conference-facing outputs.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Xafinity Consulting}{Reading, United Kingdom}
+    {Actuarial Analyst}{Sep 2015 -- Sep 2017}
+    \resumeItemListStart
+      \resumeItem{\textbf{Modeled defined benefit pension liabilities} (valuations, transfer values, accounting disclosures, assumption setting) with high attention to governance and risk drivers.}
+      \resumeItem{\textbf{Selected for specialist pension insurance team} supporting large bespoke schemes; delivered rapid turnaround analyses for multiple deals exceeding \pounds 1B.}
+      \resumeItem{\textbf{Finance foundations:} Institute and Faculty of Actuaries exams passed (CT1--CT8), \textasciitilde60\% completed.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% -------------------- Education --------------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of California, Los Angeles (UCLA)}{Los Angeles, CA}
+    {PhD, Statistics \ \ (\small GPA: 3.89/4.00)}{Sep 2017 -- Jun 2022}
+  \resumeSubheading
+    {University College London (UCL)}{London, UK}
+    {MSci Mathematics, First Class Honors}{Sep 2011 -- Jun 2015}
+\resumeSubHeadingListEnd
+
+% -------------------- Selected Research (Optional, slim) --------------------
+\section{Selected Research (Optional)}
+\small{
+\textbf{Network \& dependence modeling:} publications and preprints on statistical models for networks and spatiotemporal processes; invited talks at Penn State (2025) and UCSC (2025). \\
+\textbf{Award:} UCLA Department of Statistics Outstanding PhD Dissertation Award (2022).
+}
+\vspace{-4pt}
+
+% -------------------- Additional --------------------
+\section{Additional}
+\resumeSubHeadingListStart
+  \resumeSubheadingOneLine{Programming}{Python, R, SQL, C++, AWS}
+  \resumeSubheadingOneLine{Service}{Reviewer: Journal of Complex Networks}
+\resumeSubHeadingListEnd
+
+\end{document}

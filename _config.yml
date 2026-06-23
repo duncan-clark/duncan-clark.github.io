@@ -158,6 +158,7 @@ defaults:
 exclude:
   - "*.Rmd"
   - deprecated
+  - Duncan_Clark_CV
   - CHANGELOG.md
   - Dockerfile
   - Gemfile

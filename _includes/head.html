@@ -19,6 +19,10 @@
   <meta name="description" content="{{ site.description }}">
   {% endif %}
 
+  {% if page.url == '/' or page.url == '/index.html' %}
+  <meta name="application-name" content="Duncan A. Clark">
+  {% endif %}
+
   {% include gtag.html %}
   {% include gtm_head.html %}
   {% include google_analytics.html %}
